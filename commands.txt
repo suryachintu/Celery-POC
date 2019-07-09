@@ -1,1 +1,3 @@
 celery -A tasks flower --port=5555
+celery -A tasks worker --loglevel=info -O fair --concurrency=500 --pool=eventlet
+docker run -d -p 6379:6379 redis
